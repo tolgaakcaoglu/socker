@@ -93,8 +93,8 @@ class _TypewriterTextState extends State<TypewriterText> {
             _typingTimer = null;
             _cursorBlinkTimer = null;
             _index = 0;
+            _showCursorNow = true;
             _hasAnimatedOnce = false;
-            _showCursorNow = false;
             _visibleText = '';
             _completed = false;
             if (mounted) setState(() {});
