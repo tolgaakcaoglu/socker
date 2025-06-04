@@ -55,15 +55,6 @@ class _TypewriterTextState extends State<TypewriterText> {
   @override
   void initState() {
     super.initState();
-    _startTyping();
-
-    if (widget.showCursor) {
-      _cursorBlinkTimer = Timer.periodic(const Duration(milliseconds: 500), (
-        _,
-      ) {
-        setState(() => _showCursorNow = !_showCursorNow);
-      });
-    }
   }
 
   void _startTyping() {
@@ -78,6 +69,7 @@ class _TypewriterTextState extends State<TypewriterText> {
         _typingTimer?.cancel();
         if (!_completed) {
           _completed = true;
+          _showCursorNow = false;
           widget.onComplete?.call();
         }
       }
@@ -99,11 +91,21 @@ class _TypewriterTextState extends State<TypewriterText> {
         final isVisible = info.visibleFraction > 0;
         if (isVisible) {
           _startTyping();
+
+          if (widget.showCursor) {
+            _cursorBlinkTimer = Timer.periodic(
+              const Duration(milliseconds: 500),
+              (_) {
+                setState(() => _showCursorNow = !_showCursorNow);
+              },
+            );
+          }
         } else {
           _typingTimer?.cancel();
           if (_completed) {
             _visibleText = '';
             _completed = false;
+            _showCursorNow = false;
             widget.onComplete?.call();
             if (mounted) setState(() {});
           }
