@@ -57,6 +57,17 @@ class _TypewriterTextState extends State<TypewriterText> {
         }
       }
     });
+
+    if (widget.showCursor) {
+      _cursorBlinkTimer?.cancel(); // Önceki varsa iptal et
+      _cursorBlinkTimer = Timer.periodic(const Duration(milliseconds: 350), (
+        _,
+      ) {
+        if (mounted) {
+          setState(() => _showCursorNow = !_showCursorNow);
+        }
+      });
+    }
   }
 
   @override
@@ -75,18 +86,6 @@ class _TypewriterTextState extends State<TypewriterText> {
 
         if (isVisible && _typingTimer == null && !_completed) {
           _startTyping();
-
-          if (widget.showCursor) {
-            _cursorBlinkTimer?.cancel(); // Önceki varsa iptal et
-            _cursorBlinkTimer = Timer.periodic(
-              const Duration(milliseconds: 500),
-              (_) {
-                if (mounted) {
-                  setState(() => _showCursorNow = !_showCursorNow);
-                }
-              },
-            );
-          }
         } else if (!isVisible) {
           if (widget.mode == VisibilityAnimationMode.repeatOnVisibilityChange) {
             _typingTimer?.cancel();
