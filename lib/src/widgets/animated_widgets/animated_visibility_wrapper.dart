@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:socker/src/models/enums.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 /// Animasyon yönünü belirtir.
 enum SlideDirection { bottomToTop, topToBottom, leftToRight, rightToLeft }
 
 /// Animasyonun görünürlük durumunda nasıl tetikleneceğini tanımlar.
-enum VisibilityAnimationMode { once, repeatOnVisibilityChange, alwaysPlay }
 
 /// Scroll ile görünür olunca fade ve/veya slide animasyonu oynatan widget.
 class AnimatedVisibilityWrapper extends StatefulWidget {
