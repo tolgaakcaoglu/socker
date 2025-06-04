@@ -47,7 +47,7 @@ class AnimatedVisibilityWrapper extends StatefulWidget {
     this.curve = Curves.easeOut,
     this.offsetPercentage = 10.0,
     this.delay = Duration.zero,
-    this.direction = SlideDirection.rightToLeft,
+    this.direction = SlideDirection.bottomToTop,
     this.mode = VisibilityAnimationMode.once,
     this.enableSlide = true,
     this.enableFade = true,

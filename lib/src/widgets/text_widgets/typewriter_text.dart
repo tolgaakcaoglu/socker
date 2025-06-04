@@ -11,7 +11,7 @@ class TypewriterText extends StatefulWidget {
   final bool showCursor;
   final VoidCallback? onComplete;
   final VisibilityAnimationMode mode;
-  final UniqueKey hero;
+  final ValueKey hero;
 
   const TypewriterText({
     super.key,
@@ -93,6 +93,8 @@ class _TypewriterTextState extends State<TypewriterText> {
             _typingTimer = null;
             _cursorBlinkTimer = null;
             _index = 0;
+            _hasAnimatedOnce = false;
+            _showCursorNow = false;
             _visibleText = '';
             _completed = false;
             if (mounted) setState(() {});
@@ -108,7 +110,7 @@ class _TypewriterTextState extends State<TypewriterText> {
             ),
             if (widget.showCursor && !_completed)
               TextSpan(
-                text: _showCursorNow ? "|" : " ",
+                text: _showCursorNow ? "|" : "",
                 style:
                     widget.textStyle?.copyWith(color: context.primaryColor) ??
                     TextStyle(fontSize: 18, color: context.primaryColor),
