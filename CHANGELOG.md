@@ -1,3 +1,3 @@
-## 0.0.11
+## 0.0.12
 
-* DottedBorderPainter eklendi
+* context.go() yerine Socker.go() olarak contextsiz erisim duzeltmesi 
