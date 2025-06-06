@@ -1,3 +1,3 @@
-## 0.0.9
+## 0.0.10
 
-* TypewriterText widgetinin her gorunumde animasyon uygula olayinda bir sorun vardi, duzelttim
+* DottedBorderPainter eklendi

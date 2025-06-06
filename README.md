@@ -287,6 +287,25 @@ Dokunulduğunda widget'ı kucultup normal boyutuna gerı dondurerek dokunma anim
 TapScaleWrapper(child: Icon(Icons.favorite));
 ```
 
+9. DottedBorderPainter
+```dart
+CustomPaint(
+  painter: DottedBorderPainter(
+    color: Colors.teal,
+    spacing: 6,
+    radius: 4,
+    strokeWidth: 2,
+    borderRadius: 16,
+    lineType: DottedLineType.dash, // ya da DottedLineType.dot
+  ),
+  child: Container(
+    padding: EdgeInsets.all(16),
+    child: Text("Yuvarlak border + dash/dot"),
+  ),
+)
+
+```
+
 ## Ek Bilgiler
 Paketle ilgili sorularınız, önerileriniz veya geri bildirimleriniz için [aildev@outlook.com](mailto:aildev@outlook.com) adresinden iletişime geçebilirsiniz. 
 
