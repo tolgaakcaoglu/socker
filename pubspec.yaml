@@ -1,6 +1,6 @@
 name: socker
 description: "Hazır widget ve extension içeren Flutter paketi"
-version: 0.0.10
+version: 0.0.11
 homepage: 'https://github.com/tolgaakcaoglu/socker'
 platforms:
   android:

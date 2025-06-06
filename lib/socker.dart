@@ -10,4 +10,5 @@ export 'src/extensions/widget_extensions.dart';
 export 'src/extensions/context_extensions.dart';
 export 'src/extensions/duration_extension.dart';
 export 'src/extensions/num_extensions.dart';
+export 'src/paint/dotted_border_painter.dart';
 export 'src/models/enums.dart';
