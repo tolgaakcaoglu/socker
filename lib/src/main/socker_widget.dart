@@ -48,7 +48,7 @@ class Socker {
   static Widget svgIconThemedInvert(String icon) => svgIcon(themedInvert(icon));
 
   static NavigatorState get navigator => context.navigator;
-  static CupertinoPageRoute route(Widget page) => context.route(page);
+  static PageRoute route(Widget page) => context.route(page);
   static Future go(Widget page) => context.go(page);
   static Future goRemoved(Widget page) => context.goReset(page);
   static void back([Object? result]) => context.back(result);
