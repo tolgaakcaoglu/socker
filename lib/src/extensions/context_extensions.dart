@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:socker/src/widgets/macos_route_animation.dart';
 
 import '../../socker.dart';
 
@@ -87,7 +88,7 @@ extension ContextExtensions on BuildContext {
   }
 
   NavigatorState get navigator => Navigator.of(this);
-  CupertinoPageRoute route(Widget p) => CupertinoPageRoute(builder: (ctx) => p);
+  CupertinoPageRoute route(Widget p) => MacosRoute(child: p);
   Future go(Widget p) => navigator.push(route(p));
   Future goReset(Widget p) =>
       navigator.pushAndRemoveUntil(route(p), (_) => false);
