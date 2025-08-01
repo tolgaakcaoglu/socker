@@ -11,7 +11,7 @@ class MacosRoute<T> extends PageRouteBuilder<T> {
               Animation<double> animation,
               Animation<double> secondaryAnimation,
             ) => child,
-        transitionDuration: const Duration(milliseconds: 400),
+        transitionDuration: const Duration(milliseconds: 800),
         transitionsBuilder:
             (
               BuildContext context,
