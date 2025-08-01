@@ -88,7 +88,7 @@ extension ContextExtensions on BuildContext {
   }
 
   NavigatorState get navigator => Navigator.of(this);
-  CupertinoPageRoute route(Widget p) => MacosRoute(child: p);
+  PageRouteBuilder route(Widget p) => MacosRoute(child: p);
   Future go(Widget p) => navigator.push(route(p));
   Future goReset(Widget p) =>
       navigator.pushAndRemoveUntil(route(p), (_) => false);
