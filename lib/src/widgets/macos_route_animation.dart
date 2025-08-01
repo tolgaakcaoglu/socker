@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MacosRouteV2<T> extends PageRouteBuilder<T> {
+class MacosRoute<T> extends PageRouteBuilder<T> {
   final Widget child;
 
-  MacosRouteV2({required this.child})
+  MacosRoute({required this.child})
       : super(
           transitionDuration: const Duration(milliseconds: 550), // Süreyi biraz artırdık
           pageBuilder: (
