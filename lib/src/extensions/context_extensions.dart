@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:socker/src/widgets/macos_route_animation.dart';
@@ -100,10 +101,17 @@ extension ContextExtensions on BuildContext {
   }
 
   NavigatorState get navigator => Navigator.of(this);
-  PageRoute route(Widget p) => MacosRoute(child: p);
-  Future go(Widget p) => navigator.push(route(p));
-  Future goReset(Widget p) =>
-      navigator.pushAndRemoveUntil(route(p), (_) => false);
+  PageRoute route(Widget p, PageTransitionType type) {
+    if (type == PageTransitionType.macOs) return MacosRoute(child: p);
+    return CupertinoPageRoute(builder: (context) => p);
+  }
+
+  Future go(Widget p, {PageTransitionType type = PageTransitionType.ios}) =>
+      navigator.push(route(p, type));
+  Future goReset(
+    Widget p, {
+    PageTransitionType type = PageTransitionType.ios,
+  }) => navigator.pushAndRemoveUntil(route(p, type), (_) => false);
   void back([dynamic value]) => navigator.pop(value);
 
   ScaffoldFeatureController? snackBar({required String title}) {
@@ -115,3 +123,5 @@ extension ContextExtensions on BuildContext {
     return Socker.scafKey.currentState?.showSnackBar(sn);
   }
 }
+
+enum PageTransitionType { ios, macOs }

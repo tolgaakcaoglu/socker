@@ -3,6 +3,7 @@
 # Socker
 
 [![pub paketi](https://img.shields.io/pub/v/socker.svg?label=socker&logo=dart)](https://pub.dev/packages/socker) 
+[![github](https://img.shields.io/pub/v/github.svg?label=github&logo=github)](https://github.com/tolgaakcaoglu/socker) 
 [![lisans](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)  
 
 Socker, Flutter uygulamalarınızda `ScaffoldMessenger` ve `Navigator` durumlarına global olarak kolayca erişmenizi sağlayan hafif bir yardımcı pakettir. Böylece, widget ağacının derinliklerinden veya farklı `BuildContext`’lerden bağımsız olarak Snackbar gösterebilir veya sayfalar arası geçiş yapabilirsiniz.

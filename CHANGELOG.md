@@ -1,3 +1,5 @@
-## 0.0.12
+## 0.0.13
 
-* context.go() yerine Socker.go() olarak contextsiz erisim duzeltmesi 
+* Paketler guncellendi
+* ChangingText widgeti eklendi
+* Eksikler giderildi
