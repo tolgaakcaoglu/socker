@@ -82,6 +82,14 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TypewriterText(text: 'Bu metin daktilo tipi bir animasyon ile yazdirilacaktir'),
+            10.height,
+            ChangingText(
+              style: context.textTheme.headlineLarge,
+              texts: [
+              'Animasyon ile'
+              'değişen widget.'
+              'Harika!'
+            ]),
             20.height,
             ElevatedButton(
               onPressed: () {
