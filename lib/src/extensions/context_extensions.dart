@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:socker/src/widgets/macos_route_animation.dart';
 
 import '../../socker.dart';
@@ -42,6 +42,18 @@ extension ContextExtensions on BuildContext {
   FocusScopeNode get focusScope => FocusScope.of(this);
   void get hideKeyboard => focusScope.unfocus();
   bool get isKeyboardOpened => viewInsets.bottom > 0;
+
+  String themed(String icon) => isDark ? '${icon}_dark' : icon;
+  String themedInvert(String icon) => isDark ? icon : '${icon}_dark';
+
+  Widget svgIcon(String icon) => SvgPicture.asset(icon.svgAsset);
+  Widget svgIconThemed(String icon) => svgIcon(themed(icon));
+  Widget svgIconThemedInvert(String icon) => svgIcon(themedInvert(icon));
+
+  String themedImagePath(String path) =>
+      isDark ? themed(path).imgAsset : path.imgAsset;
+  String themedInvertImagePath(String path) =>
+      isDark ? path.imgAsset : themed(path).imgAsset;
 
   Widget indicator({
     double? value,
