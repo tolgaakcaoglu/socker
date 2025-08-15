@@ -17,8 +17,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  visibility_detector:
-  cached_network_image:
+  visibility_detector: ^0.4.0+2
+  cached_network_image: ^3.4.1
   flutter_svg: ^2.1.0
 
 dev_dependencies:
