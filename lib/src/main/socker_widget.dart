@@ -43,7 +43,9 @@ class Socker {
       isDark ? path.imgAsset : themed(path).imgAsset;
 
   static Widget svgIcon(String icon) => SvgPicture.asset(icon.svgAsset);
-  static Widget svgIconThemed(String icon) => svgIcon(themed(icon));
+  static Widget svgIconString(String icon) => SvgPicture.string(icon);
+  static Widget svgIconThemed(String icon) => SvgPicture.string(icon);
+  static Widget svgIconThemedString(String icon) => svgIconString(themed(icon));
   static Widget svgIconThemedInvert(String icon) => svgIcon(themedInvert(icon));
 
   static NavigatorState get navigator => context.navigator;

@@ -1,5 +1,3 @@
-## 0.0.14
+## 0.0.15
 
-* Paketler guncellendi
-* ChangingText widgeti eklendi
-* Eksikler giderildi
+* svg string destegi eklendi 
